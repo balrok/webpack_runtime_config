@@ -29,9 +29,8 @@ usable.
 
 ## Sample Script
 
-Included in this repository is a small create-react-app sample application.
-Just run `yarn build -t frontend .`.
-Then run `yarn run -e="REACT_APP_VAR1=Y;REACT_APP_VAR2=123" -p3000:80 -t frontend`.
+Included in this repository is a small create-react-app sample application. Another sample application (`sample_nginx`) uses nginx and a
+staged building process - just to show that this still works (just modify the entrypoint.sh to use nginx).
 
 ## Modifications to existing codebase
 
@@ -41,3 +40,6 @@ statement is evaluated at compile-time. This would then evaluate to `if (@REACT_
 The solution is quite simple - confuse the treeshaker with a method-call:
 Either use .valueOf() or .toString():
 `if (process.env.REACT_APP_VAR1.valueOf() === "Y")` 
+
+This is only needed when the variable is used in comparisons - if they are purely used as a string (e.g., name of the application, url to
+the backend, there is no need to use valuOf()).

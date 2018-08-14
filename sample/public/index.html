@@ -36,5 +36,28 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="text/javascript">
+      document.write("%REACT_APP_VAR1%");
+      document.write("<br/>Remember to use valueOf() on env-variables<br/>");
+      if ("%REACT_APP_VAR2%".valueOf() !== "var2.env") {
+        document.write("Not using the .env var:%REACT_APP_VAR2%<br/>");
+      }
+      if ("%REACT_APP_VAR2%".valueOf() !== "var2.dock") {
+        document.write("Not using the .dock var:%REACT_APP_VAR2%<br/>");
+      }
+      if ("%REACT_APP_VAR2%".valueOf() !== "var2.run") {
+        document.write("Not using the .run var:%REACT_APP_VAR2%<br/>");
+      }
+      document.write("<br/><hr/><br/>Here an example what happens without the valueOf:<br/>");
+      if ("%REACT_APP_VAR2%" !== "var2.env") {
+        document.write("Not using the .env var:%REACT_APP_VAR2%<br/>");
+      }
+      if ("%REACT_APP_VAR2%" !== "var2.dock") {
+        document.write("Not using the .dock var:%REACT_APP_VAR2%<br/>");
+      }
+      if ("%REACT_APP_VAR2%" !== "var2.run") {
+        document.write("Not using the .run var:%REACT_APP_VAR2%<br/>");
+      }
+    </script>
   </body>
 </html>

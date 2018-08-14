@@ -11,7 +11,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          vars: {process.env.REACT_APP_VAR1}; {process.env.REACT_APP_VAR2}<br/>
         </p>
       </div>
     );
